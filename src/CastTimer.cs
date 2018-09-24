@@ -21,12 +21,7 @@ namespace SaitamaTec.CastTime
 
 		public float RecastingTime=>recastingTime;
 
-		public int RecastTimeFrame{
-			set{
-
-			}
-		}
-
+		public float RecastTimeRatio=>(RecastTime-RecastingTime)/RecastTime;
 		
 		public IEnumerator OnCast(CastAction a){
 			Debug.Log("Cast...start!");

@@ -38,7 +38,7 @@ namespace SaitamaTec.CastTime
 			get{
 				return WatchTarget.Castable
 					?"Rady!"
-					:WatchTarget.RecastingTime.ToString("0.00");
+					:WatchTarget.RecastTimeRatio.ToString("00%");
 			}			
 		}
   }
