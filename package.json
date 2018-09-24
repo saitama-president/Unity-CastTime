@@ -1,0 +1,22 @@
+{
+  "name": "unity-casttime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saitama-president/Unity-CastTime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saitama-president/Unity-CastTime/issues"
+  },
+  "homepage": "https://github.com/saitama-president/Unity-CastTime#readme",
+  "dependencies": {
+    "prettier": "^1.14.3"
+  }
+}
