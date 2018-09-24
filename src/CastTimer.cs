@@ -7,33 +7,19 @@ namespace SaitamaTec.CastTime
 {
   public class CastTimer : MonoBehaviour
   {
+		public delegate void CastAction();
 		[SerializeField]
 		private float recastTime=10;
 		[SerializeField]
 		private float castTime=10;
-
-		
 		private float castingTime=0;
 		private float recastingTime=0;
 
+		public float RecastTime=> recastTime;
+		public float CastTime=> castTime;
+		public bool Castable=> (RecastingTime <= 0);
 
-		public float RecastTime{
-			get{
-				return recastTime;
-			}
-		}
-		
-
-		public bool Castable{
-			get{
-				return RecastingTime <= 0;
-			}
-		}		
-		public float RecastingTime{
-			get{
-				return recastingTime;
-			}
-		}
+		public float RecastingTime=>recastingTime;
 
 		public int RecastTimeFrame{
 			set{
@@ -41,8 +27,19 @@ namespace SaitamaTec.CastTime
 			}
 		}
 
+		
+		public IEnumerator OnCast(CastAction a){
+			Debug.Log("Cast...start!");
+			yield return new WaitForSecondsRealtime(CastTime);
+			Debug.Log("Cast...OK!");
+			a();
+			yield break;
+		}
+
 		public void Cast(){
 			recastingTime = RecastTime;
+			
+			this.StartCoroutine(OnCast(()=>{}));
 		}
 
 		public void Start(){
